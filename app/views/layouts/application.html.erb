@@ -52,6 +52,7 @@
               <li><%= link_to "Link3", "/path3"  %></li>
               <% if signed_in? %>
                 <li><%= link_to "Profile", user_path(current_user)  %></li>
+                <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
               <% end %>
             </ul>
           </div><!--/.nav-collapse -->
@@ -78,7 +79,7 @@
       </div><!--/row-->
 
       <footer>
-        <p>&copy; Company 2013</p>
+        <p>&copy; Brandon Bell 2013</p>
       </footer>
 
     </div> <!-- /container -->

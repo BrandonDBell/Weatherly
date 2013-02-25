@@ -148,7 +148,7 @@ DEPENDENCIES
   devise
   jquery-rails
   less-rails
-  paperclip
+  paperclip (~> 3.0)
   rails (= 3.2.9)
   sass-rails (~> 3.2.3)
   sqlite3

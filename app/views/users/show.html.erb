@@ -1,5 +1,6 @@
+<%= image_tag @user.avatar.url(:thumb) %>
 <h1>User#show</h1>
 <p>Find me in app/views/user/show.html.erb</p>
-<% if signed_in? %>
- <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>  
- <% end %>
+
+
+

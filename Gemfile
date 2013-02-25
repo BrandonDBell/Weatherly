@@ -22,14 +22,14 @@ end
 
 gem 'jquery-rails'
 gem 'devise'
-gem 'paperclip'
+gem 'paperclip', "~> 3.0"
 gem 'better_errors'
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 
 # To use ActiveModel has_secure_password
- gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
