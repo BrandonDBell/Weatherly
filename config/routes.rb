@@ -3,6 +3,8 @@ Weatherly::Application.routes.draw do
   resources :users, :only => [:show]
   get "pages/index"
   get "pages/about"
+  match '/hourly',  to: "hourly_lookup#hourly"
+  match '/satellite', to: "satellite#show"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

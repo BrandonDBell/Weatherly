@@ -47,9 +47,10 @@
           <%= link_to "Weatherly", root_path, class: "brand" %>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <li><%= link_to "Current Conditions", "/hourly"  %></li>
+              <li><%= link_to "Forecast", "/path1"  %></li>
+              <li><%= link_to "City History", "/path2"  %></li>
+              <li><%= link_to " Satellite/Radar", "satellite"  %></li>
               <% if signed_in? %>
                 <li><%= link_to "Profile", user_path(current_user)  %></li>
                 <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
@@ -66,9 +67,10 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <li><%= link_to "Forecast", "/path1"  %></li>
+              <li><%= link_to "City History", "/path2"  %></li>
+              <li><%= link_to "Current Conditions", "/path3"  %></li>
+              <li><%= link_to " Satellite/Radar", "/path4"  %></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->

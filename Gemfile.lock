@@ -28,6 +28,7 @@ GEM
     activesupport (3.2.9)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    addressable (2.3.3)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     better_errors (0.7.0)
@@ -56,6 +57,9 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     hike (1.2.1)
+    httparty (0.10.2)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
     i18n (0.6.1)
     journey (1.0.4)
     jquery-rails (2.2.1)
@@ -74,6 +78,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.21)
     multi_json (1.6.1)
+    multi_xml (0.5.3)
     orm_adapter (0.4.0)
     paperclip (3.4.1)
       activemodel (>= 3.0.0)
@@ -137,6 +142,10 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.1)
       rack (>= 1.0)
+    wunderground (1.0.0)
+      addressable
+      httparty (> 0.6.0)
+      json (> 1.4.0)
 
 PLATFORMS
   ruby
@@ -146,6 +155,7 @@ DEPENDENCIES
   better_errors
   coffee-rails (~> 3.2.1)
   devise
+  httparty
   jquery-rails
   less-rails
   paperclip (~> 3.0)
@@ -155,3 +165,4 @@ DEPENDENCIES
   therubyracer
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
+  wunderground
