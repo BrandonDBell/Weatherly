@@ -4,7 +4,7 @@ Weatherly::Application.routes.draw do
   get "pages/index"
   get "pages/about"
   match '/hourly',  to: "hourly_lookup#hourly"
-  match '/satellite', to: "satellite#show"
+  match '/show', to: "hourly_lookup#show"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

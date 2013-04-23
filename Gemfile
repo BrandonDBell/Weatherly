@@ -29,7 +29,8 @@ gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem 'wunderground'
 gem 'httparty'
-
+gem "binding_of_caller"
+gem 'cancan'
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
