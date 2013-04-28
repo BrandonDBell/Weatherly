@@ -21,13 +21,13 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'devise'
 gem 'paperclip', "~> 3.0"
 gem 'better_errors'
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
-gem 'wunderground'
 gem 'httparty'
 gem "binding_of_caller"
 gem 'cancan'

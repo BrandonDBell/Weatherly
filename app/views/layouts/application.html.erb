@@ -48,7 +48,7 @@
           <div class="container-fluid nav-collapse">
             <ul class="nav">
               <li><%= link_to "Current Conditions", "/hourly"  %></li>
-              <li><%= link_to "Forecast", "/path1"  %></li>
+              <li><%= link_to "10 Day Forecast", "/forecast"  %></li>
               <li><%= link_to "City History", "/path2"  %></li>
               <li><%= link_to " Satellite/Radar", "satellite"  %></li>
               <% if signed_in? %>
@@ -61,18 +61,21 @@
       </div>
     </div>
 
+    
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Forecast", "/path1"  %></li>
-              <li><%= link_to "City History", "/path2"  %></li>
-              <li><%= link_to "Current Conditions", "/path3"  %></li>
-              <li><%= link_to " Satellite/Radar", "/path4"  %></li>
-            </ul>
-          </div><!--/.well -->
+          <% if signed_in? %>
+            <div class="well sidebar-nav">
+              <ul class="nav nav-list">
+                <li class="nav-header">Sidebar</li>
+                <li><%= link_to "Forecast", "/path1"  %></li>
+                <li><%= link_to "City History", "/path2"  %></li>
+                <li><%= link_to "Current Conditions", "/path3"  %></li>
+                <li><%= link_to " Satellite/Radar", "/path4"  %></li>
+              </ul>
+            </div><!--/.well -->
+          <% end %>
         </div><!--/span-->
         <div class="span9">
           <%= bootstrap_flash %>
@@ -90,6 +93,8 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
-
+    $(function() {
+      $('.datepicker').datepicker();
+    });
   </body>
 </html>

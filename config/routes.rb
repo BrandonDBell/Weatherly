@@ -3,9 +3,10 @@ Weatherly::Application.routes.draw do
   resources :users, :only => [:show]
   get "pages/index"
   get "pages/about"
-  match '/hourly',  to: "hourly_lookup#hourly"
-  match '/show', to: "hourly_lookup#show"
-
+  match 'hourly',  to: "hourly_lookup#hourly"
+  match 'hourly_show', to: "hourly_lookup#hourly_show"
+  match 'forecast',  to: "forecast#forecast"
+  match 'forecast_show', to: "forecast#forecast"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
