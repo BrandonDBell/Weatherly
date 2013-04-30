@@ -1,0 +1,2 @@
+module HourlyHelper
+end

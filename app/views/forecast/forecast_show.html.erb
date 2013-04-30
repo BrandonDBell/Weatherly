@@ -1,0 +1,11 @@
+<%= @forecast.location %>
+<%= @forecast.city %>
+<br/>
+<br/>
+<br/>
+<br/>
+<%= image_tag @forecast.icon1 %>
+<%= @forecast.day1 %>
+<%= @forecast.fcttext1 %>
+<br/>
+<%= link_to('New Search', forecast_path, class: 'btn btn-primary') %> 

@@ -1,0 +1,10 @@
+<h1>Look up the current weather for a city:</h1>
+<br />
+<%= form_tag('/hourly_show') do %>
+		<%= label_tag(:location, "Enter in your state or country name:") %>
+		<%= text_field_tag(:location) %>
+		<%= label_tag(:city, "Enter in your city name:") %>
+		<%= text_field_tag(:city) %>
+	<br />
+    <%= submit_tag "Check It Out!", class: 'btn btn-primary' %>
+<% end %>

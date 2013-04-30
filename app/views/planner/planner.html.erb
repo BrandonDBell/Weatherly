@@ -1,0 +1,12 @@
+<h1>Look up the historical data for a date range in a location location:</h1>
+<br />
+<%= form_tag('/planner_show') do %>
+		<%= label_tag(:location, "Enter in your state or country name:") %>
+		<%= text_field_tag(:location) %>
+		<%= label_tag(:city, "Enter in your city name:") %>
+		<%= text_field_tag(:city) %>
+		<%= label_tag(:date, "Enter in a date range (no longer than 30 days, format must be MM-DD,MM-DD):") %>
+		<%= text_field_tag(:date) %>
+	<br />
+    <%= submit_tag "Check It Out!", class: 'btn btn-primary' %>
+<% end %>
