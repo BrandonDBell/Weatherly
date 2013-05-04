@@ -12,6 +12,9 @@ Weatherly::Application.routes.draw do
   match 'satellite_show', to: "satellite#satellite_show"
   match 'planner',  to: "planner#planner"
   match 'planner_show', to: "planner#planner_show"
+  match 'about', to: "pages#about"
+  match 'almanac', to: "almanac#almanac"
+  match 'almanac_show', to: "almanac#almanac_show"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

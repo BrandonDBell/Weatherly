@@ -1,6 +1,6 @@
 class Hourly
 	attr_reader :location, :city
-	attr_accessor :temperature, :icon, :feel, :condition, :time, :wind, :location, :city
+	attr_accessor :temperature, :icon, :feel, :condition, :wind, :location, :city
 
 	def initialize(location, city)
     	@location = location.gsub(' ', '_')
@@ -13,7 +13,7 @@ class Hourly
 	end
 
 	def parse_response(response)
-	    hourl_forecast_temperature = response.parsed_response['response']['hourly_forecast']['forecast'].first
+	    hourly_forecast_temperature = response.parsed_response['response']['hourly_forecast']['forecast'].first
 	    self.temperature = hourly_forecast_temperature['temp']['english']
 	    self.icon = hourly_forecast_temperature['icon_url']
 
@@ -22,9 +22,6 @@ class Hourly
 
 	    hourly_forecast_condition = response.parsed_response['response']['hourly_forecast']['forecast'].first
 	    self.condition = hourly_forecast_condition['dewpoint']['condition']
-
-	    hourly_forecast_time = response.parsed_response['response']['hourly_forecast']['forecast'].first
-	    self.time = hourly_forecast_time['FCTTIME']['pretty']
 
 	    hourly_forecast_wind = response.parsed_response['response']['hourly_forecast']['forecast'].first
 	    self.wind = hourly_forecast_wind['wdir']['dir']

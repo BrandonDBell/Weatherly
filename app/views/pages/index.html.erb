@@ -1,10 +1,24 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
-
-<% if signed_in? %> 
-<% else %>
-	<div class='btn-group'>
- 	<%= link_to('Login', new_user_session_path, class: 'btn btn-primary') %>  
- 	<%= link_to('Register', new_user_registration_path, class: 'btn btn-primary')  %> 
-	</div>
-<% end %>
+<h1>Welcome to Weather-ly</h1>
+*Work in progress. Many things might change often.*<br/><br/>
+<div class="span10">
+	<% if signed_in? %> 
+	<% else %>
+		<div class='btn-group'>
+	 	<%= link_to('Login', new_user_session_path, class: 'btn btn-primary') %>  
+	 	<%= link_to('Register', new_user_registration_path, class: 'btn btn-primary')  %> 
+		</div>
+	<% end %>
+</div><br/><br/>
+<div class="span5">
+	<h4>Current conditions in <%= @page.city %>, <%= @page.state %>, <%= @page.country %></h4><br/>
+	<%= image_tag @page.icon %><br/>
+	<%= @page.condition %><br/>
+	It is currently <%= @page.temperature %>&deg;<br/>
+	It feels like <%= @page.feel %>&deg;<br/>
+	Wind is blowing out of the <%= @page.wind %> at <%= @page.winddir %> degrees
+</div>
+<div class="span5">
+	<h4>Current satellite imagery of your area:</h4>
+	<%= image_tag @page.image %><br/>
+	<em>The next update will be at <%= @page.time %></em>
+</div>

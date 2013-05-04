@@ -79,6 +79,7 @@ GEM
       actionpack (>= 3.1)
       less (~> 2.2.0)
     libv8 (3.11.8.13)
+    libxml-ruby (2.6.0)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -169,6 +170,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   less-rails
+  libxml-ruby
   paperclip (~> 3.0)
   pg
   rails (= 3.2.9)

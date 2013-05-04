@@ -18,18 +18,19 @@ group :assets do
    gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem "twitter-bootstrap-rails"
+gem 'jquery-ui-rails'
 end
 
 gem 'jquery-rails'
 gem "less-rails"
-gem "twitter-bootstrap-rails"
-gem 'jquery-ui-rails'
 gem 'devise'
 gem 'paperclip', "~> 3.0"
 gem 'better_errors'
 gem 'httparty'
 gem "binding_of_caller"
 gem 'cancan'
+gem 'libxml-ruby'
 # To use ActiveModel has_secure_password
  gem 'bcrypt-ruby', '~> 3.0.0'
 

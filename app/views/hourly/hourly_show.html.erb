@@ -1,12 +1,11 @@
-
-<%= @hourly.location %>
-<%= @hourly.city %><br/>
-<%= @hourly.temperature %></p>
-<p><%= @hourly.feel %></p></p>
-<p><%= @hourly.condition %></p>
-<p><%= @hourly.time %></p>
-<p><%= @hourly.wind %></p>
-
-<p><%= image_tag @hourly.icon %></p>
-
-<%= link_to('New Search', hourly_path, class: 'btn btn-primary') %>  
+<div class="span10">
+	<h2>The current conditions for <%= @hourly.city %>, <%= @hourly.location %></h2>
+	<hr/>
+</div>
+<div class="span10">
+	<%= image_tag @hourly.icon %><br/>
+	Current temperature: <%= @hourly.temperature %>&deg;<br/>
+	Feels like: <%= @hourly.feel %>&deg;<br/>
+	Wind from the <%= @hourly.wind %><br/>
+	<%= link_to('New Search', hourly_path, class: 'btn btn-primary') %>  
+</div>

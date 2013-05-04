@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Weatherly"%></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Weather-ly"%></title>
     <%= csrf_meta_tags %>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -44,16 +44,19 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <%= link_to "Weatherly", root_path, class: "brand" %>
+          <%= link_to "Weather-ly", root_path, class: "brand" %>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
               <li><%= link_to "Current Conditions", "/hourly"  %></li>
               <li><%= link_to "10 Day Forecast", "/forecast"  %></li>
               <li><%= link_to "Trip Planner", "/planner"  %></li>
-              <li><%= link_to " Satellite/Radar", "/satellite"  %></li>
+              <li><%= link_to "Satellite Imagery", "/satellite"  %></li>
+              <li><%= link_to "Day Almanac", "/almanac"  %></li>
+              <li><%= link_to "About", "/about"  %></li>
               <% if signed_in? %>
-                <li><%= link_to "Profile", user_path(current_user)  %></li>
-                <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+              <% else %>
+              <li><%= link_to 'Login', new_user_session_path %></li>
+              <li><%= link_to 'Register', new_user_registration_path %></li>
               <% end %>
             </ul>
           </div><!--/.nav-collapse -->
@@ -68,11 +71,10 @@
           <% if signed_in? %>
             <div class="well sidebar-nav">
               <ul class="nav nav-list">
-                <li class="nav-header">Sidebar</li>
-                <li><%= link_to "Forecast", "/path1"  %></li>
-                <li><%= link_to "City History", "/path2"  %></li>
-                <li><%= link_to "Current Conditions", "/path3"  %></li>
-                <li><%= link_to " Satellite/Radar", "/path4"  %></li>
+                <li class="nav-header">User sidebar</li>
+                <li><%= link_to "Profile", user_path(current_user)  %></li>
+                <li><%= link_to "Edit your account", edit_user_registration_path %></li>
+                <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
               </ul>
             </div><!--/.well -->
           <% end %>

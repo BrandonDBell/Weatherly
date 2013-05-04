@@ -1,52 +1,110 @@
-<%= @planner.location %>
-<%= @planner.city %>
-<br/>
-<br/>
-<br/>
-<br/>
-<%= @planner.title %><br/>
-<%= @planner.startdate %><br/>
-<%= @planner.enddate %>
-<br/>
-Temperature:<br/>
-<%= @planner.min %><br/>
-<%= @planner.avg %><br/>
-<%= @planner.max %><br/>
-
-<%= @planner.freeze %><br/>
-<%= @planner.freezeper %>%<br/>
-<%= @planner.overfreeze %><br/>
-<%= @planner.overfreezeper %>%<br/>
-<%= @planner.warm %><br/>
-<%= @planner.warmper %>%<br/>
-<%= @planner.hot %><br/>
-<%= @planner.hotper %>%<br/>
-<%= @planner.sweltering %><br/>
-<%= @planner.swelteringper %>%<br/>
-<%= @planner.humid %><br/>
-<%= @planner.humidper %>%<br/>
-Percipitation:<br/>
-<%= @planner.precipmin %><br/>
-<%= @planner.precipavg %><br/>
-<%= @planner.precipmax %><br/>
-
-<%= @planner.dewmin %><br/>
-<%= @planner.dewavg %><br/>
-<%= @planner.dewmax %><br/>
-<%= @planner.sunny %><br/>
-<%= @planner.sunnyper %>%<br/>
-<%= @planner.rain %><br/>
-<%= @planner.rainper %>%<br/>
-<%= @planner.thunder %><br/>
-<%= @planner.thunderper %>%<br/>
-<%= @planner.wind %><br/>
-<%= @planner.windper %>%<br/>
-<%= @planner.snow %><br/>
-<%= @planner.snowper %>%<br/>
-<%= @planner.tornado %><br/>
-<%= @planner.tornadoper %>%<br/>
-<%= @planner.hail %><br/>
-<%= @planner.hailper %>%<br/>
-<%= @planner.fog %><br/>
-<%= @planner.fogper %>%<br/>
-<%= link_to('New Search', planner_path, class: 'btn btn-primary') %> 
+<div class="span10">
+	<h2>The <%= @planner.title %><br/> for <%= @planner.city %>, <%= @planner.location %>.</h2>
+	thestiaskadfj ;afjs ;s
+	<hr/>
+</div>
+<div class="span10">
+	<table class="table table-striped">
+		<tr class="info">
+			<td>Averages</td>
+			<td>Minimum</td>
+			<td>Average</td>
+			<td>Maximum</td>
+		</tr>
+		<tr>
+			<td>Temperature</td>
+			<td><%= @planner.min %>&deg;</td>
+			<td><%= @planner.avg %>&deg;</td>
+			<td><%= @planner.max %>&deg;</td>
+		</tr>
+		<tr>
+			<td>Percipitation</td>
+			<td><%= @planner.precipmin %> in.</td>
+			<td><%= @planner.precipavg %> in.</td>
+			<td><%= @planner.precipmax %> in.</td>
+		</tr>
+		<tr>
+			<td>Dewpoint</td>
+			<td><%= @planner.dewmin %>&deg;</td>
+			<td><%= @planner.dewavg %>&deg;</td>
+			<td><%= @planner.dewmax %>&deg;</td>
+		</tr>
+	</table>
+</div>
+<div class="span5">
+	<table class="table table-striped">
+		<tr class="info">
+			<td>Temperature of Day</td>
+			<td>Chance of day occuring</td>
+		</tr>
+		<tr>
+			<td><%= @planner.freeze %> (below 32&deg;F)</td>
+			<td><%= @planner.freezeper %>%</td>
+		</tr>
+		<tr>
+			<td><%= @planner.overfreeze %> (between 32&deg;F/60&deg;F)</td>
+			<td><%= @planner.overfreezeper %>%</td>
+		</tr>
+		<tr>
+			<td><%= @planner.warm %> (over 60&deg;F)</td>
+			<td><%= @planner.warmper %>%</td>
+		</tr>
+		<tr>
+			<td><%= @planner.hot %> (over 90&deg;F)</td>
+			<td><%= @planner.hotper %>%</td>
+		</tr>
+		<tr>
+			<td><%= @planner.humid %> (dew point over 60&deg;F)</td>
+			<td><%= @planner.humidper %>%</td>
+		</tr>
+		<tr>
+			<td><%= @planner.sweltering %> (dew point over 70&deg;F)</td>
+			<td><%= @planner.swelteringper %>%</td>
+		</tr>
+	</table>
+</div>
+<div class="span5">
+	<table class="table table-striped">
+		<tr class="info">
+			<td>Type of Day</td>
+			<td>Chance of day occuring</td>
+		</tr>
+		<tr>
+			<td><%= @planner.sunny %></td>
+			<td><%= @planner.sunnyper %>%</td>
+		</tr>
+		<tr>
+			<td><%= @planner.rain %></td>
+			<td><%= @planner.rainper %>%</td>
+		</tr>
+		<tr>
+			<td><%= @planner.thunder %></td>
+			<td><%= @planner.thunderper %>%</td>
+		</tr>
+		<tr>
+			<td><%= @planner.wind %> (avg wind over 10 mph)</td>
+			<td><%= @planner.windper %>%</td>
+		</tr>
+		<tr>
+			<td><%= @planner.snow %></td>
+			<td><%= @planner.snowper %>%</td>
+		</tr>
+		<tr>
+			<td><%= @planner.tornado %></td>
+			<td><%= @planner.tornadoper %>%</td>
+		</tr>
+		<tr>
+			<td><%= @planner.hail %></td>
+			<td><%= @planner.hailper %>%</td>
+		</tr>
+		<tr>
+			<td><%= @planner.fog %></td>
+			<td><%= @planner.fogper %>%</td>
+		</tr>
+	</table>
+</div>
+<div class="span10">
+	<small>Begining of historical data: <%= @planner.startdate %><br/>
+	End of historical date: <%= @planner.enddate %><br/></small>
+	<%= link_to('New Search', planner_path, class: 'btn btn-primary') %> 
+</div>

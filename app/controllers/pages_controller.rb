@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
-  def index
-  end
-
-  def about
-  end
+	def index
+    	@page = Page.new(:ip => request.remote_ip)
+    	@page.info
+    	@page.hourly
+    	@page.satellite
+	end
 end

@@ -1,23 +1,27 @@
 class Planner
-	attr_reader :location, :city, :date
+	attr_reader :location, :city, :date, :start_date, :end_date
 	attr_accessor :location, :city, :date, :date_temp, :startdate, :enddate, :title, :min, 
 	:avg, :max, :precipmin, :precipavg, :precipmax, :dewmin, :dewavg, :dewmax, :sunny, :sunnyper,
 	:rain, :rainper, :thunder, :thunderper, :wind, :windper, :snow, :snowper, :tornado, :tornadoper,
 	:freeze, :freezeper, :overfreeze, :overfreezeper, :hail, :hailper, :fog, :fogper, :warm, :warmper,
 	:hot, :hotper, :sweltering, :swelteringper, :humid, :humidper
 
-	def initialize(location, city, date)
+	def initialize(location, city, start_date, end_date)
     	@location = location.gsub(' ', '_')
     	@city = city.gsub(' ', '_')
-    	@date = "planner_" + date.gsub(/[-,]/, '-' => '', ',' => '')
+    	@date = "planner_" + start_date.gsub('/', '') + end_date.gsub('/', '')
     end
 
 	def fetch_weather
 	    response = HTTParty.get("http://api.wunderground.com/api/cdb75d07a23ad227/#{date}/q/#{location}/#{city}.xml")
-	    if response.nil?
-	    	redirect_to :back
+	    if !response
+	    	redirect_to error_url
 	    end
-	    parse_response(response)
+	    if (response.code == 200)
+	    	parse_response(response)
+	    else
+	    	redirect_to error_url
+	    end
 	end
 
 	def parse_response(response)
