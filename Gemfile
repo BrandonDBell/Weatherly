@@ -21,7 +21,7 @@ group :assets do
   gem "twitter-bootstrap-rails"
 gem 'jquery-ui-rails'
 end
-
+gem 'heroku'
 gem 'jquery-rails'
 gem "less-rails"
 gem 'devise'
@@ -29,8 +29,9 @@ gem 'paperclip', "~> 3.0"
 gem 'better_errors'
 gem 'httparty'
 gem "binding_of_caller"
-gem 'cancan'
 gem 'libxml-ruby'
+gem "cancan"
+
 # To use ActiveModel has_secure_password
  gem 'bcrypt-ruby', '~> 3.0.0'
 

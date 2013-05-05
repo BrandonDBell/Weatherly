@@ -48,16 +48,10 @@
           <div class="container-fluid nav-collapse">
             <ul class="nav">
               <li><%= link_to "Current Conditions", "/hourly"  %></li>
-              <li><%= link_to "10 Day Forecast", "/forecast"  %></li>
+              <li><%= link_to "5 Day Forecast", "/forecast"  %></li>
               <li><%= link_to "Trip Planner", "/planner"  %></li>
               <li><%= link_to "Satellite Imagery", "/satellite"  %></li>
               <li><%= link_to "Day Almanac", "/almanac"  %></li>
-              <li><%= link_to "About", "/about"  %></li>
-              <% if signed_in? %>
-              <% else %>
-              <li><%= link_to 'Login', new_user_session_path %></li>
-              <li><%= link_to 'Register', new_user_registration_path %></li>
-              <% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -66,6 +60,12 @@
 
     
     <div class="container-fluid">
+      <% flash.each do |name, msg| %>
+        <div class="alert alert-<% name == :notice ? "success" : "error" %>">
+          <a class="close" data-dismiss="alert">×</a>
+          <%= msg %>
+        </div>
+      <% end %>
       <div class="row-fluid">
         <div class="span3">
           <% if signed_in? %>
@@ -77,6 +77,14 @@
                 <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
               </ul>
             </div><!--/.well -->
+          <% else %>
+            <div class="well sidebar-nav">
+              <ul class="nav nav-list">
+                <li class="nav-header">Create/Login To Account</li>
+                <li><%= link_to 'Login', new_user_session_path %></li>
+                <li><%= link_to 'Register', new_user_registration_path %></li>
+              </ul>
+            </div><!--/.well -->
           <% end %>
         </div><!--/span-->
         <div class="span9">
@@ -85,8 +93,9 @@
         </div>
       </div><!--/row-->
 
-      <footer>
+      <footer class="footer" style="background-color:#c2c2c2">
         <p>&copy; Brandon Bell 2013</p>
+        <p><%= link_to "About", "/about"  %></p>
       </footer>
 
     </div> <!-- /container -->

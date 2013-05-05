@@ -3,7 +3,7 @@ Weatherly::Application.routes.draw do
   devise_for :users
   resources :users, :only => [:show]
   get "pages/index"
-  get "pages/about"
+match 'about',  to: "pages#about"
   match 'hourly',  to: "hourly#hourly"
   match 'hourly_show', to: "hourly#hourly_show"
   match 'forecast',  to: "forecast#forecast"

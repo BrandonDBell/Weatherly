@@ -1,17 +1,66 @@
-<%= @forecast.y %>
+<div class="span10">
+	<h2>Five day forcast for <%= @forecast.city %>, <%= @forecast.location %></h2>
+	<h3><%= @forecast.month1 %> <%= @forecast.day1 %>, <%= @forecast.year1 %> through <%= @forecast.month2 %> <%= @forecast.day2 %>, <%= @forecast.year2 %></h3>
+	<hr/>
+</div>
 <br/>
-<br/>
-<br/>
-<br/>
-<%= @forecast.location %>
-<%= @forecast.city %>
-<br/>
-<br/>
-<br/>
-<br/>
-<%= image_tag @forecast.icon1 %>
-<%= @forecast.day1 %>
-<%= @forecast.fcttext1 %>
-<br/>
-<%= link_to('New Search', forecast_path, class: 'btn btn-primary') %> 
-
+<div class="span10">
+	<table class="table table-striped">
+		<tr class="info">
+			<td>Week Day</td>
+			<td>Daily Conditions</td>
+			<td>High</td>
+			<td>Low</td>
+			<td>Wind</td>
+			<td>Humidity</td>
+		</tr>
+		<tr>
+			<td><h4><%= @forecast.weekday1 %></h4>
+			<td><%= image_tag @forecast.icon_url1 %> <br/>
+				<%= @forecast.conditions1 %></td>
+			<td><%= @forecast.high1 %>&deg;</td>
+			<td><%= @forecast.low1 %>&deg;</td>
+			<td><%= @forecast.wind1 %> mph</td>
+			<td><%= @forecast.humidity1 %></td>
+		</tr>
+		<tr>
+			<td><h4><%= @forecast.weekday2 %></h4></td>
+			<td><%= image_tag @forecast.icon_url2 %> <br/>
+				<%= @forecast.conditions2 %></td>
+			<td><%= @forecast.high2 %>&deg;</td>
+			<td><%= @forecast.low2 %>&deg;</td>
+			<td><%= @forecast.wind2 %> mph</td>
+			<td><%= @forecast.humidity2 %></td>
+		</tr>
+		<tr>
+			<td><h4><%= @forecast.weekday3 %></h4></td>
+			<td><%= image_tag @forecast.icon_url3 %> <br/>
+				<%= @forecast.conditions3 %></td>
+			<td><%= @forecast.high3 %>&deg;</td>
+			<td><%= @forecast.low3 %>&deg;</td>
+			<td><%= @forecast.wind3 %> mph</td>
+			<td><%= @forecast.humidity3 %></td>
+		</tr>
+		<tr>
+			<td><h4><%= @forecast.weekday4 %></h4></td>
+			<td><%= image_tag @forecast.icon_url4 %> <br/>
+				<%= @forecast.conditions4 %></td>
+			<td><%= @forecast.high4 %>&deg;</td>
+			<td><%= @forecast.low4 %>&deg;</td>
+			<td><%= @forecast.wind4 %> mph</td>
+			<td><%= @forecast.humidity4 %></td>
+		</tr>
+		<tr>
+			<td><h4><%= @forecast.weekday5 %></h4></td>
+			<td><%= image_tag @forecast.icon_url5 %> <br/>
+				<%= @forecast.conditions5 %></td>
+			<td><%= @forecast.high5 %>&deg;</td>
+			<td><%= @forecast.low5 %>&deg;</td>
+			<td><%= @forecast.wind5 %> mph</td>
+			<td><%= @forecast.humidity5 %></td>
+		</tr>
+	</table>
+</div>
+<div class="span10">
+	<%= link_to('New Search', forecast_path, class: 'btn btn-primary') %> 
+</div>

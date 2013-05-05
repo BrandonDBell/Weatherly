@@ -22,12 +22,15 @@ GEM
       activesupport (= 3.2.9)
       arel (~> 3.0.2)
       tzinfo (~> 0.3.29)
+    activerecord-tableless (1.2.0)
+      activerecord (>= 2.3.0)
     activeresource (3.2.9)
       activemodel (= 3.2.9)
       activesupport (= 3.2.9)
     activesupport (3.2.9)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    addressable (2.3.4)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     better_errors (0.7.0)
@@ -57,8 +60,17 @@ GEM
       railties (~> 3.1)
       warden (~> 1.2.1)
     erubis (2.7.0)
+    excon (0.20.1)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    heroku (2.39.2)
+      heroku-api (~> 0.3.7)
+      launchy (>= 0.3.2)
+      netrc (~> 0.7.7)
+      rest-client (~> 1.6.1)
+      rubyzip
+    heroku-api (0.3.9)
+      excon (~> 0.20.1)
     hike (1.2.2)
     httparty (0.10.2)
       multi_json (~> 1.0)
@@ -73,6 +85,8 @@ GEM
       railties (>= 3.1.0)
     json (1.7.7)
     kgio (2.8.0)
+    launchy (2.3.0)
+      addressable (~> 2.3)
     less (2.2.2)
       commonjs (~> 0.2.6)
     less-rails (2.2.6)
@@ -87,6 +101,7 @@ GEM
     mime-types (1.23)
     multi_json (1.7.2)
     multi_xml (0.5.3)
+    netrc (0.7.7)
     orm_adapter (0.4.0)
     paperclip (3.4.1)
       activemodel (>= 3.0.0)
@@ -123,6 +138,9 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.2)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
+    rubyzip (0.9.9)
     sass (3.2.8)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -160,12 +178,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-tableless (~> 1.0)
   bcrypt-ruby (~> 3.0.0)
   better_errors
   binding_of_caller
   cancan
   coffee-rails (~> 3.2.1)
   devise
+  heroku
   httparty
   jquery-rails
   jquery-ui-rails
