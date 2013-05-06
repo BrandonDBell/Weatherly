@@ -1,7 +1,13 @@
 class Hourly
+	
+	include ActiveModel::Validations
+  	
 	attr_reader :location, :city
+	
 	attr_accessor :temperature, :icon, :feel, :condition, :wind, :location, :city
+
 	validates_presence_of :location, :city
+
 	def initialize(location, city)
     	@location = location.gsub(' ', '_')
     	@city = city.gsub(' ', '_')

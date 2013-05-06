@@ -44,6 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
+          <%= link_to image_tag('cloud.png'), root_path, class: "brand" %>
           <%= link_to "Weather-ly", root_path, class: "brand" %>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
@@ -52,6 +53,7 @@
               <li><%= link_to "Trip Planner", "/planner"  %></li>
               <li><%= link_to "Satellite Imagery", "/satellite"  %></li>
               <li><%= link_to "Day Almanac", "/almanac"  %></li>
+              <li><%= link_to "About", "/about"  %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -93,9 +95,7 @@
         </div>
       </div><!--/row-->
 
-      <footer class="footer" style="background-color:#c2c2c2">
-        <p>&copy; Brandon Bell 2013</p>
-        <p><%= link_to "About", "/about"  %></p>
+      <footer class="footer">
       </footer>
 
     </div> <!-- /container -->

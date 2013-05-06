@@ -14,13 +14,10 @@ class Planner
 
 	def fetch_weather
 	    response = HTTParty.get("http://api.wunderground.com/api/cdb75d07a23ad227/#{date}/q/#{location}/#{city}.xml")
-	    if !response
-	    	redirect_to error_url
-	    end
-	    if (response.code == 200)
+	    if !response.nil?
 	    	parse_response(response)
 	    else
-	    	redirect_to error_url
+	    	redirect_to root_path
 	    end
 	end
 

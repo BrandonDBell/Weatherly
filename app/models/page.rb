@@ -7,8 +7,8 @@ class Page
     end
 
 	def info
-	    #response = HTTParty.get("http://api.wunderground.com/api/cdb75d07a23ad227/geolookup/q/autoip.xml?geo_ip=#{correctip}")
-	    response = HTTParty.get("http://api.wunderground.com/api/cdb75d07a23ad227/geolookup/q/autoip.xml?geo_ip=67.174.63.74")
+	    response = HTTParty.get("http://api.wunderground.com/api/cdb75d07a23ad227/geolookup/q/autoip.xml?geo_ip=#{correctip}")
+	    #response = HTTParty.get("http://api.wunderground.com/api/cdb75d07a23ad227/geolookup/q/autoip.xml?geo_ip=67.174.63.74")
 	    if response.nil?
 	    	redirect_to :back
 	    end
