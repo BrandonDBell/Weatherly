@@ -19,6 +19,7 @@ group :assets do
 
   	gem 'uglifier', '>= 1.0.3'
   	gem 'jquery-ui-rails'
+
   	gem "twitter-bootstrap-rails"
 end
 
@@ -32,6 +33,7 @@ gem "binding_of_caller"
 gem 'libxml-ruby'
 gem "cancan"
 gem 'bootstrap-datepicker-rails'
+
 # To use ActiveModel has_secure_password
  gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -1,18 +1,22 @@
-class Hourly
-	
-	include ActiveModel::Validations
-  	
-	attr_reader :location, :city
-	
-	attr_accessor :temperature, :icon, :feel, :condition, :wind, :location, :city
+class MyValidator < ActiveModel::Validator
+ 	def validate(location, city)
+    	if @location.blank? || @city.blank?
+      		record.errors[:base] = "This record is invalid"
+    	end
+ 	end
+end
 
-	validates_presence_of :location, :city
+class Hourly
+	include ActiveModel::Validations
+	attr_reader :location, :city
+  	
+	attr_accessor :temperature, :icon, :feel, :condition, :wind, :location, :city
 
 	def initialize(location, city)
     	@location = location.gsub(' ', '_')
     	@city = city.gsub(' ', '_')
     end
-
+	validates_with MyValidator
 	def fetch_weather
 	    response = HTTParty.get("http://api.wunderground.com/api/cdb75d07a23ad227/hourly/q/#{location}/#{city}.xml")
 	    parse_response(response)

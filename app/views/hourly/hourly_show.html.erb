@@ -2,10 +2,19 @@
 	<h2>The current conditions for <%= @hourly.city %>, <%= @hourly.location %></h2>
 	<hr/>
 </div>
-<div class="span10">
+<div class="span3">
 	<%= image_tag @hourly.icon %><br/>
-	Current temperature: <%= @hourly.temperature %>&deg;<br/>
-	Feels like: <%= @hourly.feel %>&deg;<br/>
-	Wind from the <%= @hourly.wind %><br/>
+	<br/>
+	<table class="table table-striped">
+		<tr >
+			<td>Current temperature: <%= @hourly.temperature %>&deg;</td>
+		</tr>
+		<tr >
+			<td>Feels like: <%= @hourly.feel %>&deg;</td>
+		</tr>
+		<tr >
+			<td>Wind from the <%= @hourly.wind %></td>
+		</tr>
+	</table>
 	<%= link_to('New Search', hourly_path, class: 'btn btn-primary') %>  
 </div>

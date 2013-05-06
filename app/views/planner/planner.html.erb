@@ -5,10 +5,10 @@
 		<%= text_field_tag(:location) %>
 		<%= label_tag(:city, "Enter in your city name:") %>
 		<%= text_field_tag(:city) %>
-		<%= label_tag(:start_date, "Enter in a date range (no longer than 30 days, format must be MM/DD):") %>
-		<%= text_field_tag :start_date %>
-		<%= label_tag(:end_date, "Enter in a date range (no longer than 30 days, format must be MM/DD):") %>
-		<%= text_field_tag(:end_date) %>
+		<%= label_tag(:start_date, "Enter in a date range:") %>
+		<%= text_field_tag :start_date, nil, :id => 'datepicker' %>
+		<%= label_tag(:end_date, "Enter in a date range (no longer than 30 days from start date)") %>
+		<%= text_field_tag :end_date, nil,  :id => 'datepicker' %>
 	<br />
     <%= submit_tag "Check It Out!", class: 'btn btn-primary' %>
 <% end %>

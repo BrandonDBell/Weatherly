@@ -3,6 +3,6 @@ class PagesController < ApplicationController
     	@page = Page.new(:ip => request.remote_ip)
     	@page.info
     	@page.hourly
-    	@page.satellite
+    	@page.radar
 	end
 end

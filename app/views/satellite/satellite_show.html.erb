@@ -1,8 +1,19 @@
 <div class="span10">
-	<h2>The satellite imagrey for <%= @satellite.city %>, <%= @satellite.location %></h2>
+	<h2>The satellite and radar imagrey for <%= @satellite.city %>, <%= @satellite.location %></h2>
 	<hr/>
 </div>
-<%= image_tag @satellite.image %>
-<br/>
-<br/>
-<%= link_to('New Search', satellite_path, class: 'btn btn-primary') %> 
+<div class="span10">
+	<table>
+		<tr>
+			<td>Satellite:</td>
+			<td>Radar:</td>
+		</tr>
+		<tr>
+			<td><%= image_tag @satellite.image %></td>
+			<td><%= image_tag @satellite.radar_image %></td>
+		</tr>
+	</table>
+	<%= link_to('New Search', satellite_path, class: 'btn btn-primary') %>
+</div>
+
+

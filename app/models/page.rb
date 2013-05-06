@@ -53,17 +53,13 @@ class Page
 	    self.winddir = hourly_wind['wdir']['degrees']
 	end
 
-	def satellite
-		response = HTTParty.get("http://api.wunderground.com/api/cdb75d07a23ad227/satellite/q/#{state}/#{city}.xml")
-	    if response.nil?
-	    	redirect_to :back
-	    end
+	def radar
+		response = HTTParty.get("http://api.wunderground.com/api/cdb75d07a23ad227/animatedradar/q/#{state}/#{city}.xml?newmaps=1&timelabel=1&timelabel.y=10&num=5&delay=50")
 	    third_parse(response)
 	end
 
 	def third_parse(response)
-		satellite_image = response.parsed_response['response']['satellite']
-	    self.image = satellite_image['image_url']
+		self.image = response.parsed_response['response']['radar']['image_url']
 	end
 
 end

@@ -12,13 +12,23 @@
 <div class="span5">
 	<h4>Current conditions in <%= @page.city %>, <%= @page.state %>, <%= @page.country %></h4><br/>
 	<%= image_tag @page.icon %><br/>
-	<%= @page.condition %><br/>
-	It is currently <%= @page.temperature %>&deg;<br/>
-	It feels like <%= @page.feel %>&deg;<br/>
-	Wind is blowing out of the <%= @page.wind %> at <%= @page.winddir %> degrees
+	<table class="table table-striped">
+		<tr >
+			<td><%= @page.condition %></td>
+		</tr>
+		<tr >
+			<td>It is currently <%= @page.temperature %>&deg;</td>
+		</tr>
+		<tr >
+			<td>It feels like <%= @page.feel %>&deg;</td>
+		</tr>
+		<tr >
+			<td>Wind is blowing out  <%= @page.wind %> at <%= @page.winddir %> degrees</td>
+		</tr>
+	</table>
 </div>
 <div class="span5">
-	<h4>Current satellite imagery of your area:</h4>
+	<h4>Current radar imagery of your area:</h4>
 	<%= image_tag @page.image %><br/>
 	<em>The next update will be at <%= @page.time %></em>
 </div>
