@@ -1,5 +1,8 @@
 <h1>Welcome to Weather-ly</h1>
-*Work in progress. Many things might change often.*<br/><br/>
+<div class="span10">
+	<h6>Weather-ly is a weather site built to help you quickly get information about the weather in your local area or 
+	anywhere else in the world. Whether you are looking for the current weather, the forecast for the next few days, or just some historical information about an area you will be able to find the answers here. It is free to use with many more exciting additions coming in over the next few months.</h6>
+</div>
 <div class="span10">
 	<% if signed_in? %> 
 	<% else %>
@@ -8,6 +11,7 @@
 	 	<%= link_to('Register', new_user_registration_path, class: 'btn btn-primary')  %> 
 		</div>
 	<% end %>
+	<hr/>
 </div><br/><br/>
 <div class="span5">
 	<h4>Current conditions in <%= @page.city %>, <%= @page.state %>, <%= @page.country %></h4><br/>
