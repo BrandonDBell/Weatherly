@@ -1,10 +1,10 @@
 <h2>The historical data for a date range at a location:</h2>
 <br />
 <%= form_tag('/planner_show') do %>
-		<%= label_tag(:location, "Enter in your state or country name:") %>
-		<%= text_field_tag(:location) %>
 		<%= label_tag(:city, "Enter in your city name:") %>
 		<%= text_field_tag(:city) %>
+		<%= label_tag(:location, "Enter in your state or country name:") %>
+		<%= text_field_tag(:location) %>
 		<%= label_tag(:start_date, "Enter in a date range:") %>
 		<%= text_field_tag :start_date, nil, :id => 'datepicker' %>
 		<%= label_tag(:end_date, "Enter in a date range (no longer than 30 days from start date)") %>

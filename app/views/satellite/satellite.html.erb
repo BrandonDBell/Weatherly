@@ -1,10 +1,10 @@
 <h2>Look up the satellite and radar imagery for a location:</h2>
 <br />
 <%= form_tag('/satellite_show') do %>
-		<%= label_tag(:location, "Enter in your state or country name:") %>
-		<%= text_field_tag(:location) %>
 		<%= label_tag(:city, "Enter in your city name:") %>
 		<%= text_field_tag(:city) %>
+		<%= label_tag(:location, "Enter in your state or country name:") %>
+		<%= text_field_tag(:location) %>
 	<br />
     <%= submit_tag "Check It Out!", class: 'btn btn-primary' %>
 <% end %>

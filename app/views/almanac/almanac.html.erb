@@ -2,10 +2,10 @@
 <em>Currently only working for the US</em><br />
 <br />
 <%= form_tag('/almanac_show') do %>
-		<%= label_tag(:location, "Enter in your state:") %>
-		<%= text_field_tag(:location) %>
 		<%= label_tag(:city, "Enter in your city name:") %>
 		<%= text_field_tag(:city) %>
+		<%= label_tag(:location, "Enter in your state:") %>
+		<%= text_field_tag(:location) %>
 	<br />
     <%= submit_tag "Check It Out!", class: 'btn btn-primary' %>
 <% end %>

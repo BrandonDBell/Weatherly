@@ -10,15 +10,16 @@ class Hourly
 	include ActiveModel::Validations
 	attr_reader :location, :city
   	
-	attr_accessor :temperature, :icon, :feel, :condition, :wind, :location, :city
+	attr_accessor :temperature, :icon, :feel, :condition, :wind, :location, :city, :cityfixed
 
 	def initialize(location, city)
     	@location = location.gsub(' ', '_')
-    	@city = city.gsub(' ', '_')
+    	@cityfixed = city.gsub(' ', '_')
+    	@city = city
     end
 	validates_with MyValidator
 	def fetch_weather
-	    response = HTTParty.get("http://api.wunderground.com/api/cdb75d07a23ad227/hourly/q/#{location}/#{city}.xml")
+	    response = HTTParty.get("http://api.wunderground.com/api/cdb75d07a23ad227/hourly/q/#{location}/#{cityfixed}.xml")
 	    parse_response(response)
 	end
 

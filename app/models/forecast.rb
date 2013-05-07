@@ -1,6 +1,6 @@
 class Forecast
 	attr_reader :location, :city
-	attr_accessor :location, :city, :weekday1, :high1, :low1, :icon1, :icon_url1, :wind1, :humidity1, :conditions1,
+	attr_accessor :location, :city, :cityfixed, :weekday1, :high1, :low1, :icon1, :icon_url1, :wind1, :humidity1, :conditions1,
 	:weekday2, :high2, :low2, :icon2, :icon_url2, :wind2, :humidity2, :conditions2, :weekday3, :high3, :low3, :icon3, 
 	:icon_url3, :wind3, :humidity3, :conditions3, :weekday4, :high4, :low4, :icon4, :icon_url4, :wind4, :humidity4, 
 	:conditions4, :weekday5, :high5, :low5, :icon5, :icon_url5, :wind5, :humidity5, :conditions5, :month1, :day1, :year1,
@@ -8,11 +8,12 @@ class Forecast
 
 	def initialize(location, city)
     	@location = location.gsub(' ', '_')
-    	@city = city.gsub(' ', '_')
+    	@cityfixed = city.gsub(' ', '_')
+    	@city = city
     end
 
 	def fetch_weather
-	    response = HTTParty.get("http://api.wunderground.com/api/cdb75d07a23ad227/forecast10day/q/#{location}/#{city}.xml")
+	    response = HTTParty.get("http://api.wunderground.com/api/cdb75d07a23ad227/forecast10day/q/#{location}/#{cityfixed}.xml")
 	    if response.nil?
 	    	redirect_to :back
 	    end

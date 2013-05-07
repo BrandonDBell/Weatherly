@@ -1,14 +1,15 @@
 class Almanac
 	attr_reader :location, :city
-	attr_accessor :location, :city, :date, :normal, :high, :record_high, :record_low, :low, :normal_low
+	attr_accessor :location, :city, :date, :normal, :high, :record_high, :record_low, :low, :normal_low, :cityfixed
 
 	def initialize(location, city)
     	@location = location.gsub(' ', '_')
-    	@city = city.gsub(' ', '_')
+    	@cityfixed = city.gsub(' ', '_')
+    	@city = city
     end
 
 	def fetch_weather
-	    response = HTTParty.get("http://api.wunderground.com/api/cdb75d07a23ad227/almanac/q/#{location}/#{city}.xml")
+	    response = HTTParty.get("http://api.wunderground.com/api/cdb75d07a23ad227/almanac/q/#{location}/#{cityfixed}.xml")
 	    if response.nil?
 	    	redirect_to :back
 	    end
