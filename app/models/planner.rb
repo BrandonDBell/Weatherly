@@ -19,6 +19,7 @@ class Planner
     #retrieving api get request
 	def fetch_weather
 	    response = HTTParty.get("http://api.wunderground.com/api/cdb75d07a23ad227/#{date}/q/#{location}/#{cityfixed}.xml")
+	    parse_response(response)
 	end
 
 	#parsing the data that will be called on the show page

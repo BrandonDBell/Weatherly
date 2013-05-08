@@ -2,18 +2,26 @@
 	<h2>The satellite and radar imagrey for <%= @satellite.city %>, <%= @satellite.location %></h2>
 	<hr/>
 </div>
-<div class="span10">
+<div class="span5">
 	<table>
 		<tr>
 			<td>Satellite:</td>
-			<td>Radar:</td>
 		</tr>
 		<tr>
 			<td><%= image_tag @satellite.image %></td>
+		</tr>
+	</table>
+</div>
+	<div class="span5">
+	<table>
+		<tr>
+			<td>Radar:</td>
+		</tr>
+		<tr>
 			<td><%= image_tag @satellite.radar_image %></td>
 		</tr>
 	</table>
+</div>
+<div class="span10">
 	<%= link_to('New Search', satellite_path, class: 'btn btn-primary') %>
 </div>
-
-
