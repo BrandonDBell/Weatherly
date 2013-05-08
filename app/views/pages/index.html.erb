@@ -18,16 +18,16 @@
 	<%= image_tag @page.icon %><br/>
 	<table class="table table-striped">
 		<tr >
-			<td><%= @page.condition %></td>
+			<td>Predicted conditions: <%= @page.condition %></td>
 		</tr>
 		<tr >
-			<td>It is currently <%= @page.temperature %>&deg;</td>
+			<td>Currently <%= @page.temperature %>&deg;</td>
 		</tr>
 		<tr >
-			<td>It feels like <%= @page.feel %>&deg;</td>
+			<td>Feels like <%= @page.feel %>&deg;</td>
 		</tr>
 		<tr >
-			<td>Wind is blowing out  <%= @page.wind %> at <%= @page.winddir %> degrees</td>
+			<td>Wind is blowing  <%= @page.wind %> at <%= @page.winddir %> degrees</td>
 		</tr>
 	</table>
 </div>

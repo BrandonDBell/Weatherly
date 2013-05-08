@@ -6,14 +6,21 @@ This website is built on Rails 3.2.9 using wundergrounds weather api.
 
 
 Things left to implement:
+
   Validation on reports:
-    Reports need custom validation because of form_tag and tableless models
+    Reports have some validation now. Validation happens on blank 
+    form fields but nothing else. It is set up now to be expanded on
+    however
+
   User Favorites:
     Save cities user looks up so they don't have to search every time
+
   CSS:
     Works and is fluid but could look a lot cleaner
+
   GeoLocation:
   	Home page works if user has an IP, but if on a mobile network the location
   	is thrown off a little bit. Needs to be updated to Latitude and Longitude 
   	but is much more work than I have time for right now.
+
   Always adding more functionality 

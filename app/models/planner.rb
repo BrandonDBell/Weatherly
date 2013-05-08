@@ -1,4 +1,5 @@
 class Planner
+	#settes and getters
 	attr_reader :location, :city, :date, :start_date, :end_date
 	attr_accessor :location, :city, :cityfixed, :date, :date_temp, :startdate, :enddate, :title, :min, 
 	:avg, :max, :precipmin, :precipavg, :precipmax, :dewmin, :dewavg, :dewmax, :sunny, :sunnyper,
@@ -6,6 +7,8 @@ class Planner
 	:freeze, :freezeper, :overfreeze, :overfreezeper, :hail, :hailper, :fog, :fogper, :warm, :warmper,
 	:hot, :hotper, :sweltering, :swelteringper, :humid, :humidper
 
+	#initializing passed in variables so they can be
+	#corrected and used in the model
 	def initialize(location, city, start_date, end_date)
     	@location = location.gsub(' ', '_')
     	@cityfixed = city.gsub(' ', '_')
@@ -13,15 +16,12 @@ class Planner
     	@date = "planner_" + start_date.gsub('/', '') + end_date.gsub('/', '')
     end
 
+    #retrieving api get request
 	def fetch_weather
 	    response = HTTParty.get("http://api.wunderground.com/api/cdb75d07a23ad227/#{date}/q/#{location}/#{cityfixed}.xml")
-	    if !response.nil?
-	    	parse_response(response)
-	    else
-	    	redirect_to root_path
-	    end
 	end
 
+	#parsing the data that will be called on the show page
 	def parse_response(response)
 	    date_title = response.parsed_response['response']['trip']
 	    self.title = date_title['title']

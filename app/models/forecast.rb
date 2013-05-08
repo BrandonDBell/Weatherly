@@ -1,4 +1,5 @@
 class Forecast
+	#settes and getters
 	attr_reader :location, :city
 	attr_accessor :location, :city, :cityfixed, :weekday1, :high1, :low1, :icon1, :icon_url1, :wind1, :humidity1, :conditions1,
 	:weekday2, :high2, :low2, :icon2, :icon_url2, :wind2, :humidity2, :conditions2, :weekday3, :high3, :low3, :icon3, 
@@ -6,12 +7,15 @@ class Forecast
 	:conditions4, :weekday5, :high5, :low5, :icon5, :icon_url5, :wind5, :humidity5, :conditions5, :month1, :day1, :year1,
 	:month2, :day2, :year2
 
+	#initializing passed in variables so they can be
+	#corrected and used in the model
 	def initialize(location, city)
     	@location = location.gsub(' ', '_')
     	@cityfixed = city.gsub(' ', '_')
     	@city = city
     end
 
+    #retrieving api get request
 	def fetch_weather
 	    response = HTTParty.get("http://api.wunderground.com/api/cdb75d07a23ad227/forecast10day/q/#{location}/#{cityfixed}.xml")
 	    if response.nil?
@@ -20,6 +24,8 @@ class Forecast
 	    parse_response(response)
 	end
 
+	#there is a ton of parsing in this one
+	#probably a way to make all of it dynamic, but its fast enough for now
 	def parse_response(response)
 	    forecast_first = response.parsed_response['response']['forecast']['simpleforecast']['forecastdays']['forecastday'].first
 	    self.weekday1 = forecast_first['date']['weekday']
