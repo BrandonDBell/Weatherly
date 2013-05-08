@@ -1,5 +1,7 @@
 Weather-ly
 
+www.weather-ly.me
+
 Senior Project for CSU Chico Spring 2013
 
 This website is built on Rails 3.2.9 using wundergrounds weather api. 

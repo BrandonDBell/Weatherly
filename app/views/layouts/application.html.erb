@@ -34,7 +34,7 @@
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
   </head>
-  <body>
+  <body style="zoom: 1; background-image: url(http://bradjasper.com/subtle-patterns-bookmarklet/patterns/wavegrid.png); background-size: auto; background-repeat: repeat repeat;">
 
     <div class="navbar navbar-fluid-top">
       <div class="navbar-inner">
@@ -61,7 +61,7 @@
     </div>
 
     
-    <div class="container-fluid">
+    <div class="container-fluid" >
       <% flash.each do |name, msg| %>
         <div class="alert alert-<% name == :notice ? "success" : "error" %>">
           <a class="close" data-dismiss="alert">×</a>
